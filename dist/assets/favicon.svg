@@ -1,0 +1,24 @@
+<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="160" height="160" rx="30" fill="#191919"/><g transform="translate(0 40)"><defs>
+              <linearGradient id="tdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFD43B"/>
+                <stop offset="60%" stop-color="#FFD43B"/>
+                <stop offset="100%" stop-color="#FFD43B"/>
+              </linearGradient>
+              <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FFD43B"/>
+                <stop offset="100%" stop-color="#FFD43B"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Stylized Geometric T -->
+            <path d="M 12 16 L 72 16 L 66 28 L 12 28 Z" fill="url(#tdGrad)"/>
+            <path d="M 74 16 L 80 16 L 75 28 L 69 28 Z" fill="url(#orangeGrad)"/>
+            <path d="M 36 28 L 50 28 L 42 66 L 28 66 Z" fill="url(#tdGrad)"/>
+            <path d="M 23 48 L 49 48 L 47 52 L 21 52 Z" fill="url(#orangeGrad)"/>
+
+            <!-- Stylized Geometric D -->
+            <path d="M 82 16 L 96 16 L 86 66 L 72 66 Z" fill="url(#tdGrad)"/>
+            <path d="M 98 16 L 124 16 C 142 16 152 26 148 44 C 144 60 130 66 112 66 L 88 66 L 92 54 L 110 54 C 121 54 128 50 131 42 C 133 34 128 28 118 28 L 95 28 Z" fill="url(#tdGrad)"/>
+            <polygon points="107,38 122,38 120,43 105,43" fill="url(#orangeGrad)"/>
+          </g></svg>

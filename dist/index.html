@@ -2,31 +2,356 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#191918">
+  <meta name="theme-color" content="#191919">
   <meta name="description" content="Thilanga — cybersecurity student exploring security, networks, and the web.">
   <title>Thilanga — Cybersecurity Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23191918'/%3E%3Cpath d='M8 9h16v4h-6v12h-4V13H8z' fill='%23f18c53'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css"><script defer src="script.js"></script>
+  <script>
+    // Reset refreshes before the browser restores a section or scroll position.
+    if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+      history.scrollRestoration = 'manual';
+      history.replaceState(history.state, '', location.pathname + location.search);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      window.addEventListener('pageshow', () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }, { once: true });
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
+  <link rel="stylesheet" href="loader.css">
+  <script defer src="loader.js"></script>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="navbar.css"><link rel="stylesheet" href="about.css"><link rel="stylesheet" href="labs.css"><link rel="stylesheet" href="journey.css"><link rel="stylesheet" href="contact.css"><link rel="stylesheet" href="footer.css"><link rel="stylesheet" href="section-layout.css"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="effects.css"><script defer src="script.js"></script><script defer src="labs.js"></script><script defer src="contact.js"></script><script defer src="effects.js"></script>
 </head>
 <body>
+  <div class="site-loader" id="site-loader" hidden role="status" aria-label="Loading portfolio">
+    <div class="loader-top" aria-hidden="true"><span>THILANGA<span class="loader-dot">.</span></span><span>PORTFOLIO / 2026</span></div>
+    <div class="loader-center" aria-hidden="true">
+      <span class="loader-kicker">A CURIOUS MIND. A DIGITAL WORLD.</span>
+      <div class="loader-word"><span class="loader-outline">LOADING</span><span class="loader-fill">LOADING</span><span class="loader-slice">LOADING</span><i></i></div>
+      <div class="loader-line"><span></span></div>
+      <div class="loader-caption"><span>PREPARING YOUR EXPERIENCE</span><span>PLEASE WAIT</span></div>
+    </div>
+    <div class="loader-bottom" aria-hidden="true"><span>SECURITY · SYSTEMS · DESIGN</span><span>LET’S EXPLORE ↗</span></div>
+  </div>
   <a class="skip-link" href="#home">Skip to content</a>
+  <header class="site-header" id="navbar">
+    <div class="nav-dock">
+      <!-- Left: Brand Identity & Status Beacon -->
+      <div class="nav-brand-group">
+        <a class="nav-brand" href="#home" aria-label="Thilanga Home">
+          <span class="brand-mark-wrap">
+            <svg class="nav-td-logo" aria-hidden="true" focusable="false" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="navTdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="60%" stop-color="#dedcd5"/>
+                <stop offset="100%" stop-color="#9a978e"/>
+              </linearGradient>
+              <linearGradient id="navOrangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ed8955"/>
+                <stop offset="100%" stop-color="#ffbe98"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Stylized Geometric T -->
+            <path d="M 12 16 L 72 16 L 66 28 L 12 28 Z" fill="url(#navTdGrad)"/>
+            <path d="M 74 16 L 80 16 L 75 28 L 69 28 Z" fill="url(#navOrangeGrad)"/>
+            <path d="M 36 28 L 50 28 L 42 66 L 28 66 Z" fill="url(#navTdGrad)"/>
+            <path d="M 23 48 L 49 48 L 47 52 L 21 52 Z" fill="url(#navOrangeGrad)"/>
+
+            <!-- Stylized Geometric D -->
+            <path d="M 82 16 L 96 16 L 86 66 L 72 66 Z" fill="url(#navTdGrad)"/>
+            <path d="M 98 16 L 124 16 C 142 16 152 26 148 44 C 144 60 130 66 112 66 L 88 66 L 92 54 L 110 54 C 121 54 128 50 131 42 C 133 34 128 28 118 28 L 95 28 Z" fill="url(#navTdGrad)"/>
+            <polygon points="107,38 122,38 120,43 105,43" fill="url(#navOrangeGrad)"/>
+          </svg>
+          </span>
+          <span class="brand-name">Thilanga<span class="brand-dot">.</span></span>
+        </a>
+        <div class="nav-status" title="Status: Online & Ready for projects">
+          <span class="status-dot-wrap" aria-hidden="true">
+            <span class="status-beacon-ping"></span>
+            <span class="status-beacon-dot"></span>
+          </span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="nav-menu" id="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#labs" class="nav-link">Labs</a></li>
+          <li><a href="#journey" class="nav-link">Journey</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Action CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <button class="nav-cta" data-open-contact aria-label="Let's connect">
+          <span>Let’s connect</span>
+          <span class="cta-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+      <!-- Laser Scroll Progress Track -->
+      <div class="nav-progress-track" aria-hidden="true">
+        <div class="nav-progress-bar" id="navProgressBar"></div>
+      </div>
+    </div>
+
+    <!-- Mobile HUD Drawer -->
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <div class="mobile-nav-top">
+        <span class="mobile-nav-tag">// SYSTEM NAVIGATION</span>
+        <span class="mobile-nav-status">
+          <span class="status-dot-wrap" aria-hidden="true">
+            <span class="status-beacon-ping"></span>
+            <span class="status-beacon-dot"></span>
+          </span>
+          SECURE / ACTIVE
+        </span>
+      </div>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a href="#home" aria-current="page">
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-title">Home</span>
+              <span class="mobile-nav-sub">Curiosity &amp; Digital Builder</span>
+            </div>
+            <span class="mobile-nav-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#about">
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-title">About</span>
+              <span class="mobile-nav-sub">Story, Mindset &amp; Toolkit</span>
+            </div>
+            <span class="mobile-nav-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#labs">
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-title">Labs</span>
+              <span class="mobile-nav-sub">Security Practice &amp; Projects</span>
+            </div>
+            <span class="mobile-nav-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#journey">
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-title">Journey</span>
+              <span class="mobile-nav-sub">Education &amp; Experience</span>
+            </div>
+            <span class="mobile-nav-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#contact">
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-title">Contact</span>
+              <span class="mobile-nav-sub">Let's Build &amp; Collaborate</span>
+            </div>
+            <span class="mobile-nav-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-nav-bottom">
+        <button class="primary-button mobile-nav-cta" data-open-contact>
+          <span class="button-icon" aria-hidden="true">↗</span> Let’s connect
+        </button>
+        <div class="mobile-nav-chips" aria-hidden="true">
+          <span class="mobile-chip"><b>&gt;_</b> Terminal</span>
+          <span class="mobile-chip"><b>⌘</b> Linux</span>
+          <span class="mobile-chip"><b>⌁</b> Sec</span>
+        </div>
+      </div>
+    </div>
+  </header>
   <main>
     <section class="hero" id="home" aria-labelledby="hero-name">
-      <header class="header">
-        <div class="nav-pill"><a class="brand" href="#home" aria-label="Thilanga home"><span class="brand-mark">t.</span> Thilanga</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button></div>
+      <div class="hero-meta">
         <span class="header-note">PERSONAL PORTFOLIO <span> / 01</span></span>
-        <nav id="navigation" class="navigation" aria-label="Main navigation" hidden><a href="#home" aria-current="page"><span>01</span> Home <span>↗</span></a><p>Exploring security.<br>Building with purpose.</p></nav>
-      </header>
+      </div>
       <div class="portrait" aria-hidden="true"><img src="assets/cyber-portrait.png" alt="" fetchpriority="high"><div class="portrait-shade"></div></div>
       <div class="hero-top">
         <div class="intro reveal"><span class="eyebrow"><i></i> Curious by nature</span><h2>Cybersecurity<br>student &amp;<br><span>digital builder.</span></h2><p>Learning how systems work.<br>Discovering how to protect them.</p></div>
         <div class="mission reveal"><span class="section-label">A MINDSET, NOT JUST A SKILL</span><h2>Think critically.<br>Build securely.<br><span>Keep exploring.</span></h2><p>Exploring networks, breaking down security challenges, and turning curiosity into hands-on experience.</p><button class="primary-button" data-open-contact><span class="button-icon">↗</span> Let’s connect</button></div>
       </div>
-      <div class="identity reveal"><span class="identity-label">THE HUMAN BEHIND THE TERMINAL</span><h1 id="hero-name">Thilanga<span class="name-dot">.</span></h1></div>
-      <footer class="hero-footer reveal"><div class="focus-list" aria-label="Areas of interest"><span><b>⌘</b> Cybersecurity</span><span><b>⌁</b> Networking</span><span><b>&lt;/&gt;</b> Development</span><span><b>_</b> Linux</span></div><button class="text-button" data-open-contact>Find me online <span>↗</span></button></footer>
-      <div class="corner-accent" aria-hidden="true"></div>
+      <div class="identity reveal"><span class="identity-label">THE HUMAN BEHIND THE TERMINAL</span><h1 id="hero-name"><span class="hero-first-name">Thilanga<span class="name-dot">.</span></span> <span class="hero-last-name">Dilshan<span class="name-dot">.</span></span></h1></div>
+      
+
+    </section>
+    <div class="interests-between" aria-label="Areas of interest"><p class="interests-caption">Exploring systems, security &amp; the web</p><div class="focus-marquee" role="group" aria-label="Areas of interest"><div class="focus-track"><div class="focus-list"><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="interest-name">Cybersecurity</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/><rect x="15" y="16" width="7" height="5" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg></span><span class="interest-name">Networking</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-15-4 18"/></svg></span><span class="interest-name">Development</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 4 3-4 3m7 0h5"/></svg></span><span class="interest-name">Linux</span></span></div><div class="focus-list" aria-hidden="true"><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="interest-name">Cybersecurity</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/><rect x="15" y="16" width="7" height="5" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg></span><span class="interest-name">Networking</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-15-4 18"/></svg></span><span class="interest-name">Development</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 4 3-4 3m7 0h5"/></svg></span><span class="interest-name">Linux</span></span></div></div></div></div>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-layout">
+        <figure class="about-portrait reveal">
+          <img src="assets/cyber-portrait.png" alt="Cyber-themed chrome portrait with an orange visor" loading="lazy" width="1024" height="1536">
+          <figcaption><span>THILANGA</span><span>Curiosity → discovery</span></figcaption>
+        </figure>
+        <div class="about-story reveal">
+          <div class="about-greeting"><div><span class="about-kicker">02 / ABOUT ME</span><h2 id="about-title">Hello<span>!</span></h2></div><span class="about-symbol" aria-hidden="true">&lt;/&gt;</span></div>
+          <p>I’m Thilanga, a cybersecurity student with a curiosity for how digital systems work—and how to make them safer. I’m exploring network security, Linux, and the foundations of ethical hacking through hands-on learning.</p>
+          <p>I also enjoy building websites and apps, connecting thoughtful design with secure development.</p>
+          <p class="about-signoff">Always learning. Always asking why.</p>
+          <div class="about-mindset">
+            <h3>What drives me<span aria-hidden="true">.</span></h3>
+            <ul>
+              <li><span class="mindset-number" aria-hidden="true">01</span><div><h4>Understand the system</h4><p>Look beneath the surface to learn how networks, code, and people connect.</p></div></li>
+              <li><span class="mindset-number" aria-hidden="true">02</span><div><h4>Build with security in mind</h4><p>Bring a security-first mindset to the websites and apps I create.</p></div></li>
+              <li><span class="mindset-number" aria-hidden="true">03</span><div><h4>Learn by doing</h4><p>Explore in safe lab environments, document discoveries, and keep improving.</p></div></li>
+            </ul>
+          </div>
+        </div>
+        <aside class="about-sidebar reveal" aria-label="Skills and tools overview">
+          <div class="about-skills"><h3>Skills</h3><ul class="about-skill-grid">
+            <li><span aria-hidden="true">&gt;_</span><span>Linux</span></li>
+            <li><span aria-hidden="true">⌘</span><span>Networks</span></li>
+            <li><span aria-hidden="true">{ }</span><span>Security</span></li>
+            <li><span aria-hidden="true">&lt;/&gt;</span><span>Web</span></li>
+            <li><span aria-hidden="true">☁</span><span>Cloud</span></li>
+            <li><span aria-hidden="true">DB</span><span>Databases</span></li>
+          </ul></div>
+          <div class="about-tools"><h3>Tools</h3><p class="about-tools-note">An evolving learning toolkit.</p><ul><li><span class="tool-monogram" aria-hidden="true">WS</span><div><h4>Wireshark</h4><p>Network analysis</p></div></li><li><span class="tool-monogram" aria-hidden="true">NM</span><div><h4>Nmap</h4><p>Network discovery</p></div></li><li><span class="tool-monogram" aria-hidden="true">BP</span><div><h4>Burp Suite</h4><p>Web security testing</p></div></li><li><span class="tool-monogram" aria-hidden="true">Git</span><div><h4>Git &amp; VS Code</h4><p>Development workflow</p></div></li></ul></div>
+        </aside>
+        <div class="about-bottom reveal"><span>OPEN TO LEARNING &amp; COLLABORATION</span><button class="text-button" data-open-contact>Let’s connect <span>↗</span></button><a href="#home" class="about-back">Back to top <span aria-hidden="true">↑</span></a></div>
+      </div>
+    </section>
+    <section class="labs" id="labs" aria-labelledby="labs-title">
+      <div class="labs-inner reveal">
+        <span class="labs-eyebrow">03 / LAB PRACTICES &amp; PROJECTS</span>
+        <div class="lab-gallery" aria-label="Choose a featured lab">
+          <button class="lab-card" data-slot="0" aria-label="Feature Linux fundamentals"></button>
+          <button class="lab-card" data-slot="1" aria-label="Feature Network discovery"></button>
+          <button class="lab-card" data-slot="2" aria-label="Feature Web security"></button>
+          <div class="lab-card lab-featured" data-slot="3" aria-label="Featured lab"></div>
+          <button class="lab-card" data-slot="4" aria-label="Feature Cloud foundations"></button>
+          <button class="lab-card" data-slot="5" aria-label="Feature Secure web development"></button>
+          <button class="lab-card" data-slot="6" aria-label="Feature Log investigation"></button>
+        </div>
+        <h2 id="labs-title">Explore. Experiment.<br><span>Build understanding.</span></h2>
+        <p class="labs-intro">A space for hands-on learning, one challenge at a time.</p>
+        <div class="lab-details" aria-live="polite" aria-atomic="true"><span id="lab-category"></span><h3 id="lab-name"></h3><p id="lab-description"></p><ul id="lab-technologies" aria-label="Lab technologies"></ul></div>
+        <a class="primary-button lab-open" href="https://github.com/dilshansec" target="_blank" rel="noopener noreferrer"><span class="button-icon" aria-hidden="true"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></span> Explore more labs</a>
+        <p class="labs-hint">Select a small card to bring it into focus.</p>
+        <noscript><p>Enable JavaScript to explore the interactive lab cards.</p></noscript>
+      </div>
+    </section>
+    <section class="journey" id="journey" aria-labelledby="journey-title">
+      <header class="journey-heading reveal"><span class="journey-eyebrow">04 / MY JOURNEY</span><h2 id="journey-title">Every step shapes<br><span>what comes next.</span></h2><p>Learning the foundations. Putting them into practice.</p></header>
+      <div class="journey-legend reveal"><span>Education <i aria-hidden="true">↑</i></span><span>Experience <i aria-hidden="true">↓</i></span></div>
+      <div class="journey-timeline">
+        <article class="journey-card journey-education reveal"><div class="journey-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="m6 25 26-13 26 13-26 13L6 25Zm10 6v14c10 9 22 9 32 0V31M56 26v19M52 49h8"/></svg></div><div class="journey-copy"><span class="journey-type">EDUCATION</span><h3>Academic foundations</h3><p>A place for my school education and the subjects that sparked my interest in technology.</p><span class="journey-meta">School &amp; dates to be added</span><span class="journey-number" aria-hidden="true">01</span></div></article>
+        <article class="journey-card journey-experience reveal"><div class="journey-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect x="10" y="13" width="44" height="34" rx="3"/><path d="m19 24 7 6-7 6m14 0h11M23 54h18M32 47v7"/></svg></div><div class="journey-copy"><span class="journey-type">EXPERIENCE</span><h3>Hands-on lab practice</h3><p>Exploring Linux, network traffic, and security concepts in controlled learning environments.</p><span class="journey-meta">Personal learning</span><span class="journey-number" aria-hidden="true">02</span></div></article>
+        <article class="journey-card journey-education reveal"><div class="journey-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M32 12c-8-5-17-5-25-2v39c8-3 17-3 25 2 8-5 17-5 25-2V10c-8-3-17-3-25 2Zm0 0v39M14 20h10m-10 8h10m-10 8h10m16-16h10m-10 8h10m-10 8h10"/></svg></div><div class="journey-copy"><span class="journey-type">EDUCATION</span><h3>Cybersecurity studies</h3><p>Developing an understanding of systems, networks, and the principles behind digital security.</p><span class="journey-meta">Institution &amp; dates to be added</span><span class="journey-number" aria-hidden="true">03</span></div></article>
+        <article class="journey-card journey-experience reveal"><div class="journey-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect x="7" y="11" width="50" height="42" rx="3"/><path d="M7 21h50m-41-5h1m5 0h1m5 0h1m-6 14-8 7 8 7m18-14 8 7-8 7m-6-17-6 21"/></svg></div><div class="journey-copy"><span class="journey-type">EXPERIENCE</span><h3>Building for the web</h3><p>Connecting design, code, and security through personal websites and application projects.</p><span class="journey-meta">Personal projects</span><span class="journey-number" aria-hidden="true">04</span></div></article>
+        <article class="journey-card journey-education reveal"><div class="journey-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="26" r="16"/><path d="m32 16 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6ZM21 38l-5 17 12-5 4 8 4-8 12 5-5-17"/></svg></div><div class="journey-copy"><span class="journey-type">EDUCATION</span><h3>Continuous learning</h3><p>Making room for new courses, certifications, and deeper exploration of cloud and application security.</p><span class="journey-meta">Learning goals</span><span class="journey-number" aria-hidden="true">05</span></div></article>
+      </div>
+      <p class="journey-footnote reveal">Still learning. Still building. <span>The journey continues.</span></p>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title-section">
+      <div class="contact-layout">
+        <div class="contact-copy reveal"><span class="contact-kicker">Let’s connect ↗</span><h2 id="contact-title-section">Good things<br>start with<br><span>a conversation.</span></h2><p class="contact-intro">Have a project in mind, a security challenge to explore, or something worth learning together? I’d love to hear about it.</p><div class="contact-note"><span class="contact-note-label">A little about connecting</span><h3>Curiosity is a good starting point.</h3><p>From cybersecurity labs to thoughtful web projects, I’m interested in exchanging ideas and building useful things with people who care about their craft.</p><div class="contact-note-bottom"><span>Learn. Build. Collaborate.</span><span aria-hidden="true">↗</span></div></div></div>
+        <div class="contact-stage reveal">
+          <div class="contact-device"><div class="contact-device-header"><span class="contact-avatar" aria-hidden="true">t.</span><div><strong>THILANGA</strong><small>Cybersecurity student &amp; builder</small></div><span aria-hidden="true">↗</span></div>
+            <form class="contact-form" id="contact-form"><h3>What’s on your mind?</h3><p id="contact-delivery-note">Email details are coming soon. You can prepare and copy your message here; this form does not send it.</p><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" placeholder="How should I call you?" required maxlength="100"><label for="contact-email">Email address</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254"><label for="contact-message">Your message</label><textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your idea…" required maxlength="5000"></textarea><button type="submit" class="primary-button">Copy message <span aria-hidden="true">↗</span></button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></form>
+          </div>
+          <div class="contact-float contact-float-github" data-contact-service="github"><span aria-hidden="true">&lt;/&gt;</span><div><strong>GitHub</strong><small>Profile coming soon</small></div></div>
+          <div class="contact-float contact-float-linkedin" data-contact-service="linkedin"><span aria-hidden="true">in</span><div><strong>LinkedIn</strong><small>Profile coming soon</small></div></div>
+          <div class="contact-float contact-float-location"><span aria-hidden="true">◎</span><div><strong>Location</strong><small id="contact-location">Details coming soon</small></div></div>
+        </div>
+      </div>
     </section>
   </main>
+  <footer class="site-footer" id="footer">
+    <div class="footer-laser-accent" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <!-- Left Column: Navigation & Copyright -->
+      <div class="footer-left">
+        <nav class="footer-nav-links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#labs">Labs</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact" data-open-contact>Contact</a>
+        </nav>
+        <div class="footer-left-meta">
+          <span>All Rights Reserved. Thilanga 2026</span>
+          <span class="footer-meta-badge" aria-label="Verified security badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Center Column: Stylized TD Logo -->
+      <div class="footer-center">
+        <a href="#home" class="footer-td-logo" aria-label="Thilanga Home">
+          <svg class="td-svg-logo" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="tdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="60%" stop-color="#dedcd5"/>
+                <stop offset="100%" stop-color="#9a978e"/>
+              </linearGradient>
+              <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ed8955"/>
+                <stop offset="100%" stop-color="#ffbe98"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Stylized Geometric T -->
+            <path d="M 12 16 L 72 16 L 66 28 L 12 28 Z" fill="url(#tdGrad)"/>
+            <path d="M 74 16 L 80 16 L 75 28 L 69 28 Z" fill="url(#orangeGrad)"/>
+            <path d="M 36 28 L 50 28 L 42 66 L 28 66 Z" fill="url(#tdGrad)"/>
+            <path d="M 23 48 L 49 48 L 47 52 L 21 52 Z" fill="url(#orangeGrad)"/>
+
+            <!-- Stylized Geometric D -->
+            <path d="M 82 16 L 96 16 L 86 66 L 72 66 Z" fill="url(#tdGrad)"/>
+            <path d="M 98 16 L 124 16 C 142 16 152 26 148 44 C 144 60 130 66 112 66 L 88 66 L 92 54 L 110 54 C 121 54 128 50 131 42 C 133 34 128 28 118 28 L 95 28 Z" fill="url(#tdGrad)"/>
+            <polygon points="107,38 122,38 120,43 105,43" fill="url(#orangeGrad)"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right Column: Channels & Back to Top -->
+      <div class="footer-right">
+        <div class="footer-social-links" aria-label="Channels">
+          <a href="#contact" data-open-contact class="footer-social-item" title="GitHub">
+            <span class="social-text">GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="#contact" data-open-contact class="footer-social-item" title="LinkedIn">
+            <span class="social-text">LinkedIn</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z"/></svg>
+          </a>
+          <a href="#contact" data-open-contact class="footer-social-item" title="Contact">
+            <span class="social-text">Contact</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+        <div class="footer-right-sub">
+          <a href="#contact" data-open-contact>Privacy &amp; Terms</a>
+          <a href="#home" class="footer-back-to-top" aria-label="Back to top">
+            <span>Back to top</span>
+            <span class="top-arr" aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
   <dialog id="contact-dialog" aria-labelledby="contact-title"><button class="close-dialog" aria-label="Close connect dialog">×</button><span class="section-label">LET’S CONNECT</span><h2 id="contact-title">A conversation<br>starts here.</h2><p>My social profiles and contact details will be available here soon.</p><div class="social-list"><span>GitHub <small>Coming soon</small></span><span>LinkedIn <small>Coming soon</small></span><span>Email <small>Coming soon</small></span></div></dialog>
+  <dialog id="lab-dialog" aria-labelledby="lab-dialog-title"><button class="close-dialog" aria-label="Close lab details">×</button><span class="section-label">LAB PREVIEW</span><h2 id="lab-dialog-title"></h2><p id="lab-dialog-description"></p><h3 class="lab-objectives-title">Practice objectives</h3><ul id="lab-objectives"></ul><p class="lab-preview-note">Sample lab outline. A write-up and repository link will be added when available.</p></dialog>
 </body>
 </html>
+
+

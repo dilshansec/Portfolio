@@ -1,0 +1,55 @@
+/* About is isolated from the completed Home design. */
+.about-mindset{margin-top:34px}
+.about-mindset h3{font-size:22px;margin-bottom:20px}
+.about-mindset h3>span{color:var(--orange)}
+.about-mindset ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.about-mindset li{display:flex;align-items:flex-start;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}
+.mindset-number{color:var(--orange);font-size:12px;letter-spacing:.05em;padding-top:4px;font-variant-numeric:tabular-nums}
+.about-mindset li h4{font-size:15px;margin:0 0 5px}
+.about-mindset li p{font-size:14px;line-height:1.6;margin:0}
+.navigation a + a{margin-top:18px}
+.navigation a[aria-current="page"]{color:var(--orange)}
+.about{margin:0 12px 12px;padding:100px 5%;background:var(--bg);scroll-margin-top:12px}
+.about-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.28fr) minmax(0,.75fr);gap:36px 42px;max-width:1360px;margin:auto;align-items:start}
+.about-portrait{position:relative;margin:0;align-self:stretch;min-height:490px;overflow:hidden;border-radius:30px;background:#111110;border:1px solid var(--line)}
+.about-portrait img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.about-portrait::after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#111110e8)}
+.about-portrait figcaption{position:absolute;z-index:1;bottom:25px;left:25px;right:20px;display:flex;flex-direction:column;gap:8px}
+.about-portrait figcaption span:first-child{font-size:13px;letter-spacing:.16em;font-weight:600}
+.about-portrait figcaption span:last-child{font-size:13px;color:var(--orange)}
+.about-greeting{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:24px}
+.about-kicker{font-size:12px;letter-spacing:.15em;color:var(--muted)}
+.about h2{font-size:clamp(52px,5.9vw,86px);font-weight:700;letter-spacing:-.065em;line-height:1.05;margin:12px 0 0}
+.about h2>span{color:var(--orange)}
+.about-symbol{font-size:26px;color:var(--orange);font-weight:600;letter-spacing:-.08em;background:#ed89550d;border:1px solid #ed895530;border-radius:22px;width:64px;height:64px;display:grid;place-items:center;transform:rotate(-8deg)}
+.about p{color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 16px}
+.about .about-signoff{color:var(--text);margin-top:21px}
+.about h3{text-transform:uppercase;font-size:24px;letter-spacing:-.04em;line-height:1.2;font-weight:700;margin:0 0 24px}
+.about h4{font-size:16px;font-weight:600;line-height:1.5;margin:0 0 7px}
+.about-education{margin-top:40px}
+.about-small-label{display:block;color:var(--orange);font-size:11px;letter-spacing:.1em;margin-bottom:12px}
+.about .about-goal{font-size:14px;border-left:2px solid var(--orange);padding-left:16px;margin-top:22px;margin-bottom:0}
+.about-goal>span{display:block;color:var(--text);font-weight:600;margin-bottom:4px}
+.about-sidebar{padding-top:6px}
+.about-skill-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px 12px}
+.about-skill-grid li{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.about-skill-grid li>span:first-child{display:grid;place-items:center;width:100%;max-width:60px;aspect-ratio:1;border-radius:12px;background:#ffffff08;border:1px solid #ffffff19;color:var(--orange);font-size:24px;font-weight:500;transition:transform .2s,border-color .2s,background .2s}
+.about-skill-grid li:hover>span:first-child{transform:translateY(-3px);border-color:#ed895577;background:#ed895514}
+.about-skill-grid li>span:last-child{font-size:12px;color:#c3c1ba}
+.about-tools{margin-top:39px}
+.about-tools h3{margin-bottom:12px}
+.about .about-tools-note{font-size:13px;margin-bottom:20px}
+.about-tools ul{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.about-tools li{display:flex;align-items:center;gap:12px}
+.tool-monogram{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;background:#ed89550b;border:1px solid #ed895527;border-radius:9px;color:var(--orange);font-size:12px;font-weight:600}
+.about-tools h4{font-size:14px;margin:0}
+.about-tools li p{font-size:12px;margin:2px 0 0}
+.about-bottom{grid-column:2/-1;display:flex;align-items:center;flex-wrap:wrap;gap:18px 25px;padding-top:22px;border-top:1px solid var(--line)}
+.about-bottom>span{font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.about-back{margin-left:auto;font-size:13px;color:var(--muted);padding:8px 0}
+.about-back span{margin-left:10px;color:var(--orange)}
+.about-back:hover{color:var(--text)}
+@media(max-width:1100px){.about{padding:72px 4%}.about-layout{gap:32px 28px;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr) minmax(0,.8fr)}.about-symbol{width:50px;height:50px;font-size:22px;border-radius:16px}.about-skill-grid{gap:16px 8px}.about-skill-grid li>span:last-child{font-size:11px}.about h3{font-size:22px}}
+@media(max-width:850px){.about-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:38px 32px}.about-sidebar{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:0}.about-tools{margin-top:0}.about-skill-grid{max-width:290px}.about-skill-grid li>span:last-child{font-size:12px}.about-bottom{grid-column:1/-1}.about-portrait{min-height:460px}.about-symbol{display:none}.about h2{font-size:68px}}
+@media(max-width:550px){.about{margin:0 6px 6px;padding:54px 22px;scroll-margin-top:6px}.about-layout{grid-template-columns:1fr;gap:34px}.about-portrait{min-height:0;aspect-ratio:4/4.3;border-radius:25px}.about-portrait img{object-position:50% 37%}.about-greeting{margin-bottom:23px}.about-symbol{display:grid;width:58px;height:58px}.about h2{font-size:66px}.about-sidebar{gap:32px;grid-template-columns:1fr}.about h3{font-size:24px;margin-bottom:22px}.about-education{margin-top:32px}.about-skill-grid{max-width:100%;grid-template-columns:repeat(3,1fr);gap:22px}.about-skill-grid li>span:first-child{max-width:72px;border-radius:14px;font-size:28px}.about-tools ul{grid-template-columns:1fr 1fr;gap:22px 12px}.about-tools li{align-items:flex-start;gap:8px}.about-tools li p{font-size:12px}.about-tools h4{font-size:13px}.about-bottom{gap:12px 20px}.about-bottom>span{width:100%;font-size:10px}.about-back{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.about-skill-grid li:hover>span:first-child{transform:none}}

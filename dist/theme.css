@@ -1,0 +1,111 @@
+/* Charcoal and orange reference theme. Geometry and behavior stay unchanged. */
+:root {
+  --bg: #191919;
+  --text: #f5f5f2;
+  --muted: #a3a39e;
+  --orange: #ff742f;
+  --line: #ffffff14;
+}
+body { background: var(--bg); }
+.hero, .about, .labs, .journey, .contact, .site-footer { background: var(--bg); }
+.labs::before { background: radial-gradient(ellipse at 50% 40%, #ff742f08, transparent 65%); }
+.mission h2 span, .about h2 > span, .labs h2 span,
+.journey-heading h2 span, .contact h2 span, .brand-name { color: var(--text); background: none; }
+.name-dot { color: var(--orange); }
+.nav-dock { background: #262626cc; border-color: #ffffff12; box-shadow: 0 12px 32px #0005; }
+.site-header.scrolled .nav-dock { background: #232323ed; border-color: #ffffff1c; box-shadow: 0 14px 35px #0006; }
+.site-header::before { background: #1919197a; }
+.nav-link[aria-current="page"], .mobile-nav-item a[aria-current="page"] {
+  background: #ff742f1a;
+  border-color: #ff742f55;
+  box-shadow: inset 0 0 12px #ff742f08;
+}
+.nav-progress-bar, .footer-laser-accent { background: var(--orange); box-shadow: 0 0 10px #ff742f33; }
+.brand-glyph, .contact-avatar, .about-symbol {
+  background: #ff742f12; border-color: #ff742f38; color: var(--orange); box-shadow: none;
+}
+.primary-button, .nav-cta { background: var(--orange); border-color: #ff8b50; color: #191919; box-shadow: none; }
+.primary-button:hover, .nav-cta:hover { background: #ff914f; border-color: #ffa671; color: #191919; }
+.button-icon { background: #fff8ee; color: #242424; }
+.mobile-nav { background: #242424f5; border-color: #ffffff1c; box-shadow: 0 25px 70px #0008; }
+.hero-footer { background: transparent; border-top-color: transparent; }
+.focus-list { color: #969691; }
+.about-portrait { border-color: #ffffff14; }
+.about-skill-grid li > span:first-child, .tool-monogram {
+  background: #272727; border-color: #ffffff12; color: var(--orange);
+}
+.lab-card { background: #252525; border-color: #ffffff1c; box-shadow: 0 8px 24px #0003; }
+.lab-featured { border-color: #ff742f99; box-shadow: 0 0 0 4px #ff742f08, 0 15px 40px #0004; }
+.lab-card-inner { background: linear-gradient(145deg, #ffffff03, transparent 70%); }
+.lab-glyph { color: var(--orange); text-shadow: 0 0 25px #ff742f20; }
+.lab-window i { background: var(--orange); }
+.journey-symbol { background: #272727; border-color: #ffffff18; box-shadow: 0 5px 20px #0002; }
+.journey-eyebrow { border-color: #ffffff16; background: #ffffff03; color: var(--orange); }
+.journey-number { color: var(--orange); }
+.contact-device, dialog { background: linear-gradient(145deg, #292929, #222222); border-color: #ffffff1c; }
+.contact-float { background: #2b2b2bed; border-color: #ffffff20; }
+.contact-note { background: #232323; border-color: #ffffff16; }
+.contact-form input, .contact-form textarea { background: #191919; border-color: #ffffff1c; }
+.footer-td-logo { filter: drop-shadow(0 0 12px #ff742f20); }
+.portrait { mix-blend-mode: lighten; }
+
+/* Quiet monochrome wordmarks, with a continuous loop and soft edge fades. */
+.interests-between {
+  margin: 0 12px;
+  padding: 30px 4.2% 38px;
+  background: var(--bg);
+  text-align: center;
+}
+.interests-caption {
+  margin: 0 0 16px;
+  color: #858580;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .02em;
+}
+.interests-between .focus-marquee {
+  max-width: 900px;
+  margin-inline: auto;
+  padding-block: 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+.focus-track { animation-duration: 34s; }
+.focus-track .focus-list { gap: 56px; padding-right: 56px; }
+.focus-track .interest-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #999995;
+  transition: color .25s ease;
+}
+.focus-track .interest-card:hover { color: #d0d0cb; }
+.focus-track .interest-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: none;
+  border: 0;
+  color: inherit;
+}
+.interest-icon svg { width: 21px; height: 21px; }
+.focus-track .interest-name { font-size: 15px; font-weight: 600; letter-spacing: -.035em; }
+@media (max-width: 650px) {
+  .interests-between { margin-inline: 6px; padding: 26px 18px 30px; }
+  .interests-caption { font-size: 10px; margin-bottom: 12px; }
+  .focus-track .focus-list { gap: 34px; padding-right: 34px; }
+  .focus-track .interest-name { font-size: 13px; }
+  .focus-track .interest-icon { width: 19px; height: 19px; }
+  .interest-icon svg { width: 18px; height: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interests-between .focus-marquee { -webkit-mask-image: none; mask-image: none; }
+  .focus-track .focus-list { justify-content: center; padding-right: 0; gap: 16px 28px; }
+}

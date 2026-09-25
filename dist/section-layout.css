@@ -1,0 +1,180 @@
+/* Keep anchor destinations clear of the floating navigation. */
+:root { --nav-clearance: 88px; }
+html { scroll-padding-top: var(--nav-clearance); }
+main > section[id] { scroll-margin-top: 0; }
+.hero { height: auto; min-height: calc(100svh - 24px); max-height: none; }
+
+/* Compact desktop composition; content can still grow at larger text sizes. */
+@media (min-width: 1101px) {
+  .about, .labs, .journey, .contact {
+    min-height: calc(100svh - var(--nav-clearance) - 12px);
+    padding-top: clamp(20px, 3svh, 48px);
+    padding-bottom: clamp(20px, 3svh, 48px);
+  }
+  .hero-top { margin-top: clamp(28px, 5svh, 75px); }
+  .hero h2 { font-size: clamp(25px, 3.8svh, 42px); }
+  .identity { padding-top: 20px; }
+  .identity h1 { font-size: min(20.3vw, 25svh, 310px); }
+  .hero-footer { margin-top: 12px; padding: 14px 0 18px; }
+  .about-layout { gap: 20px 32px; }
+  .about-portrait { min-height: 400px; }
+  .about-greeting { margin-bottom: 16px; }
+  .about h2 { font-size: clamp(52px, 8svh, 76px); }
+  .about p { font-size: 14px; margin-bottom: 12px; }
+  .about-mindset { margin-top: 20px; }
+  .about-mindset li { padding: 10px 0; }
+  .about-mindset li p { margin: 0; }
+  .about h3 { margin-bottom: 16px; }
+  .about-tools { margin-top: 24px; }
+  .about-tools ul { gap: 12px; }
+  .about-bottom { padding-top: 12px; }
+  .lab-gallery { height: clamp(190px, 28svh, 330px); margin: 16px auto 20px; }
+  .labs h2 { font-size: clamp(30px, 4.5svh, 48px); margin-bottom: 10px; }
+  .labs-intro { margin-bottom: 14px; }
+  .lab-details { min-height: 0; }
+  .lab-details ul { margin: 10px 0; }
+  .labs-hint { margin: 10px 0 0; }
+  .journey-heading h2 { margin: 12px 0 10px; font-size: clamp(30px, 4.8svh, 46px); }
+  .journey-heading p { margin: 10px 0; }
+  .journey-legend { margin-top: 14px; }
+  .journey-timeline { margin-top: 24px; }
+  .journey-symbol { width: 64px; height: 64px; }
+  .journey-copy { padding: 14px 0; }
+  .journey-education .journey-symbol { margin-top: 14px; }
+  .journey-experience .journey-symbol { margin-bottom: 14px; }
+  .journey-number { font-size: 24px; margin-top: 8px; }
+  .journey-footnote { margin-top: 20px; }
+  .contact-stage { padding: 8px 0; }
+  .contact h2 { font-size: clamp(38px, 6.5svh, 62px); margin-bottom: 18px; }
+  .contact-note { margin-top: 28px; padding: 22px; }
+  .contact-device { padding: 20px 24px 16px; }
+  .contact-device-header { padding-bottom: 12px; }
+  .contact-form h3 { margin-top: 16px; }
+  .contact-form > p { margin-bottom: 12px; }
+  .contact-form label { margin-top: 10px; }
+  .contact-form input, .contact-form textarea { padding: 10px; }
+  .contact-form textarea { min-height: 80px; height: 80px; }
+  .contact-form .primary-button { margin-top: 12px; }
+  .contact-form .contact-form-status:empty { min-height: 0; margin: 0; }
+}
+@media (max-width: 1100px) {
+  .hero { min-height: calc(100svh - 24px); }
+}
+@media (max-width: 650px) {
+  .hero { min-height: 0; }
+}
+@media (min-width: 1101px) and (max-height: 850px) {
+  .hero-top { margin-top: 20px; }
+  .identity h1 { font-size: min(20.3vw, 23svh); }
+  .hero-footer { padding-top: 10px; padding-bottom: 12px; }
+  .about, .labs, .journey, .contact { padding-top: 18px; padding-bottom: 18px; }
+  .about-tools li p { font-size: 12px; margin: 2px 0 0; }
+  .about .about-tools-note { font-size: 13px; margin-bottom: 14px; }
+  .about .about-signoff { margin-top: 12px; }
+  .about h4 { margin-bottom: 4px; }
+  .about-mindset li { padding: 8px 0; }
+  .lab-gallery { height: 24svh; margin-top: 12px; margin-bottom: 14px; }
+  .labs .primary-button { margin-top: 8px; }
+  .journey-timeline { margin-top: 16px; column-gap: 24px; }
+  .journey-heading h2 { font-size: 30px; }
+  .journey-copy { padding: 10px 0; }
+  .journey-card p { margin-bottom: 8px; }
+  .journey-number { margin-top: 4px; font-size: 22px; }
+  .journey-footnote { margin-top: 12px; }
+}
+@media (min-width: 1101px) and (max-height: 850px) {
+  .about p { line-height: 1.5; }
+  .about-greeting { margin-bottom: 12px; }
+  .about-mindset { margin-top: 14px; }
+}
+@media (min-width: 1101px) and (max-height: 850px) {
+  .about-skill-grid li > span:first-child { max-width: 52px; }
+  .about-layout { row-gap: 12px; }
+  .about-tools { margin-top: 18px; }
+}
+
+/* Seamless interests ticker, with faded edges and a stationary contact link. */
+.focus-marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.focus-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  animation: interests-scroll 28s linear infinite;
+}
+.focus-track .focus-list {
+  flex: 1 0 auto;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  gap: 40px;
+  padding-right: 40px;
+}
+.focus-track .focus-list span { flex-shrink: 0; white-space: nowrap; }
+.focus-marquee:hover .focus-track { animation-play-state: paused; }
+.hero-footer > .text-button { flex-shrink: 0; }
+@keyframes interests-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 650px) {
+  .focus-marquee { flex: none; width: 100%; }
+  .focus-track .focus-list { gap: 28px; padding-right: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .focus-marquee { -webkit-mask-image: none; mask-image: none; }
+  .focus-track { animation: none; width: 100%; min-width: 0; }
+  .focus-track .focus-list { flex: 1; flex-wrap: wrap; justify-content: flex-start; padding-right: 0; gap: 14px 20px; }
+  .focus-track .focus-list[aria-hidden="true"] { display: none; }
+}
+
+/* Emphasize the selected lab; surrounding selectors show icons only. */
+.labs .lab-gallery {
+  grid-template-columns: .65fr .75fr 3fr .75fr .65fr;
+  height: auto;
+  min-height: 300px;
+}
+.lab-card:not(.lab-featured) .lab-window,
+.lab-card:not(.lab-featured) .lab-code,
+.lab-card:not(.lab-featured) .lab-card-label,
+.lab-card:not(.lab-featured) .lab-card-index,
+.lab-card:not(.lab-featured) .lab-card-image { display: none; }
+.lab-card:not(.lab-featured) .lab-card-inner { justify-content: center; }
+.lab-card:not(.lab-featured) .lab-glyph { font-size: clamp(24px, 3vw, 40px); }
+.labs .lab-featured .lab-card-inner { min-height: 280px; }
+@media (max-width: 500px) {
+  .labs .lab-gallery {
+    grid-template-columns: .6fr 2.3fr .6fr;
+    grid-template-rows: 95px 95px 95px;
+    min-height: 0;
+  }
+  .lab-card:not(.lab-featured) .lab-card-inner { padding: 4px; }
+  .lab-card:not(.lab-featured) .lab-glyph { font-size: 22px; }
+}
+
+/* Join the main sections while preserving the separate footer boundary. */
+main > section:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/* Balance the two names across the hero without changing its other content. */
+.identity #hero-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .15em;
+  font-size: min(12vw, 23svh, 230px);
+}
+.hero-first-name, .hero-last-name {
+  background: linear-gradient(100deg, #faf9f5 10%, #edede9 65%, #898882 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-last-name { text-align: right; }
+@media (max-width: 650px) {
+  .identity #hero-name { font-size: 11vw; }
+}

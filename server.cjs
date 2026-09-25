@@ -8,7 +8,7 @@ http.createServer((req, res) => {
   if (!file.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
   fs.readFile(file, (error, data) => {
     if (error) { res.writeHead(404); return res.end('Not found'); }
-    res.setHeader('Content-Type', ({'.html':'text/html','.css':'text/css','.js':'text/javascript','.png':'image/png'})[path.extname(file)] || 'application/octet-stream');
+    res.setHeader('Content-Type', ({'.html':'text/html','.css':'text/css','.js':'text/javascript','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)] || 'application/octet-stream');
     res.end(data);
   });
 }).listen(4173, '127.0.0.1', () => console.log('Local: http://127.0.0.1:4173'));

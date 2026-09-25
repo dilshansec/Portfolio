@@ -53,9 +53,23 @@
 }
 @media (max-width: 800px) {
   .certificates { margin-inline: 6px; padding: 56px 22px; min-height: 0; }
-  .certificates-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; gap: 22px; }
+  .certificates-inner { min-width: 0; }
+  .certificates-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(88%, 360px);
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 4px 0 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) #ffffff12;
+  }
+  .certificates-grid .certificate-card { scroll-snap-align: start; }
+  .certificates-grid:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
   .certificates-heading { margin-bottom: 32px; }
-  .certificate-summary h3 { font-size: 34px; }
+  .certificate-summary h3 { font-size: clamp(24px, 6.5vw, 34px); overflow-wrap: anywhere; }
 }
 @media (max-width: 360px) {
   .certificates { padding-inline: 14px; }

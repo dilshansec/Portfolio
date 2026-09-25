@@ -31,6 +31,19 @@
 .certificate-featured .certificate-status { background: #fff8f1; color: #26170f; }
 .certificates-note { margin: 28px 0 0; text-align: center; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .footer-nav-links { flex-wrap: wrap; }
+/* Match the other sections' viewport-height desktop composition. */
+@media (min-width: 801px) {
+  .certificates { padding-block: clamp(16px, 3svh, 36px); }
+  .certificates-heading { margin-bottom: clamp(16px, 3svh, 30px); }
+  .certificates-heading h2 { font-size: clamp(30px, 4.8svh, 48px); margin: 12px 0; }
+  .certificates-heading p { margin: 0; }
+  .certificate-summary { padding: clamp(14px, 2svh, 22px); }
+  .certificate-symbol { font-size: 24px; margin: clamp(8px, 1.5svh, 18px) 0 8px; }
+  .certificate-summary h3 { font-size: clamp(25px, 3.6svh, 34px); margin-bottom: 10px; }
+  .certificate-topics { margin-block: clamp(12px, 2svh, 20px); gap: 8px; }
+  .certificate-status { margin-bottom: 8px; }
+  .certificates-note { margin-top: 16px; }
+}
 @media (min-width: 1025px) and (max-width: 1200px) {
   .nav-status { display: none; }
   .nav-link { padding-inline: 10px; }

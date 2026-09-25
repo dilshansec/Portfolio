@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="loader.css">
   <script defer src="loader.js"></script>
   <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="navbar.css"><link rel="stylesheet" href="about.css"><link rel="stylesheet" href="labs.css"><link rel="stylesheet" href="journey.css"><link rel="stylesheet" href="contact.css"><link rel="stylesheet" href="footer.css"><link rel="stylesheet" href="section-layout.css"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="effects.css"><script defer src="script.js"></script><script defer src="labs.js"></script><script defer src="contact.js"></script><script defer src="effects.js"></script>
+  <link rel="stylesheet" href="responsive.css">
+  <script defer src="responsive.js"></script>
 </head>
 <body>
   <div class="site-loader" id="site-loader" hidden role="status" aria-label="Loading portfolio">
@@ -181,7 +183,8 @@
       <div class="hero-meta">
         <span class="header-note">PERSONAL PORTFOLIO <span> / 01</span></span>
       </div>
-      <div class="portrait" aria-hidden="true"><img src="assets/cyber-portrait.png" alt="" fetchpriority="high"><div class="portrait-shade"></div></div>
+      <!-- HERO PROFILE IMAGE: Replace "assets/cyber-portrait.png" with your profile image path (e.g. "assets/images/profile.webp") -->
+      <div class="portrait hero-profile"><img class="profile-image" src="assets/cyber-portrait.png" alt="Portrait of Thilanga Dilshan" width="800" height="1000" fetchpriority="high"><div class="portrait-shade"></div></div>
       <div class="hero-top">
         <div class="intro reveal"><span class="eyebrow"><i></i> Curious by nature</span><h2>Cybersecurity<br>student &amp;<br><span>digital builder.</span></h2><p>Learning how systems work.<br>Discovering how to protect them.</p></div>
         <div class="mission reveal"><span class="section-label">A MINDSET, NOT JUST A SKILL</span><h2>Think critically.<br>Build securely.<br><span>Keep exploring.</span></h2><p>Exploring networks, breaking down security challenges, and turning curiosity into hands-on experience.</p><button class="primary-button" data-open-contact><span class="button-icon">↗</span> Let’s connect</button></div>
@@ -193,8 +196,8 @@
     <div class="interests-between" aria-label="Areas of interest"><p class="interests-caption">Exploring systems, security &amp; the web</p><div class="focus-marquee" role="group" aria-label="Areas of interest"><div class="focus-track"><div class="focus-list"><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="interest-name">Cybersecurity</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/><rect x="15" y="16" width="7" height="5" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg></span><span class="interest-name">Networking</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-15-4 18"/></svg></span><span class="interest-name">Development</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 4 3-4 3m7 0h5"/></svg></span><span class="interest-name">Linux</span></span></div><div class="focus-list" aria-hidden="true"><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span class="interest-name">Cybersecurity</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/><rect x="15" y="16" width="7" height="5" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg></span><span class="interest-name">Networking</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-15-4 18"/></svg></span><span class="interest-name">Development</span></span><span class="interest-card"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 4 3-4 3m7 0h5"/></svg></span><span class="interest-name">Linux</span></span></div></div></div></div>
     <section class="about" id="about" aria-labelledby="about-title">
       <div class="about-layout">
-        <figure class="about-portrait reveal">
-          <img src="assets/cyber-portrait.png" alt="Cyber-themed chrome portrait with an orange visor" loading="lazy" width="1024" height="1536">
+        <figure class="about-portrait about-profile reveal">
+          <img class="profile-image" src="assets/profile-placeholder.svg" alt="Profile photo placeholder for Thilanga" loading="lazy" width="800" height="1000">
           <figcaption><span>THILANGA</span><span>Curiosity → discovery</span></figcaption>
         </figure>
         <div class="about-story reveal">
@@ -353,5 +356,4 @@
   <dialog id="lab-dialog" aria-labelledby="lab-dialog-title"><button class="close-dialog" aria-label="Close lab details">×</button><span class="section-label">LAB PREVIEW</span><h2 id="lab-dialog-title"></h2><p id="lab-dialog-description"></p><h3 class="lab-objectives-title">Practice objectives</h3><ul id="lab-objectives"></ul><p class="lab-preview-note">Sample lab outline. A write-up and repository link will be added when available.</p></dialog>
 </body>
 </html>
-
 

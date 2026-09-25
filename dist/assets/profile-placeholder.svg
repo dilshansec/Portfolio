@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<rect width="800" height="1000" fill="#191919"/>
+<rect x="32" y="32" width="736" height="936" rx="32" fill="#202020" stroke="#ff742f" stroke-opacity=".35"/>
+<circle cx="400" cy="330" r="125" fill="#363636"/>
+<path d="M155 790v-85c0-145 110-230 245-230s245 85 245 230v85" fill="#363636"/>
+<path d="M320 854h160" stroke="#ff742f" stroke-width="3"/>
+<text x="400" y="905" text-anchor="middle" fill="#aaa9a3" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">YOUR PROFILE PHOTO</text>
+</svg>

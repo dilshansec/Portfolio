@@ -36,7 +36,7 @@ An animated introduction opens into a responsive, single-page portfolio. Subtle 
 - **Journey** — a timeline for education, practice, projects, and continued learning.
 - **Contact** — a message form and configurable contact channels.
 
-> Lab topics are sample learning outlines. Education details and contact channels include placeholders to complete as the portfolio grows. The portrait is generated cyber artwork.
+> Lab topics are sample learning outlines. Education details and contact channels include placeholders to complete as the portfolio grows. The portrait areas use a neutral placeholder, ready for a real profile photo.
 
 ## Run locally
 
@@ -91,6 +91,10 @@ Portfolio/
 **Contact behavior:** with no email configured, the form copies the composed message to the clipboard. Setting an email opens a draft in the visitor's email app. It does not send messages through a backend.
 
 **Navigation behavior:** refreshing returns the page to Home. Section links still work during normal navigation.
+
+## Profile photo and mobile layout
+
+Add your portrait at `dist/assets/images/profile.webp` (or `dist/assets/profile.jpg`) and update the image reference in `dist/index.html`. See the [responsive layout guide](docs/responsive-layout.md) for image classes, face crop adjustments, and breakpoint verification.
 
 ## Static hosting
 

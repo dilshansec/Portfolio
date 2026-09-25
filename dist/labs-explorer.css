@@ -8,6 +8,8 @@
 .labs-heading > p { max-width: 390px; font-size: 14px; line-height: 1.8; color: var(--muted); }
 .lab-workspace { display: grid; grid-template-columns: minmax(260px, .85fr) minmax(0, 1.65fr); gap: 24px; align-items: stretch; }
 .lab-menu { display: grid; gap: 8px; align-content: start; }
+.lab-menu .lab-choice { min-height: 72px; }
+.lab-choice > span:nth-child(2) { min-width: 0; line-height: 1.45; }
 .lab-choice { width: 100%; min-height: 48px; padding: 5px 6px 5px 18px; display: flex; align-items: center; gap: 14px; border: 1px solid #ffffff26; border-radius: 40px; background: transparent; text-align: left; color: var(--text); font-size: 14px; transition: background .2s, border-color .2s; }
 .lab-choice:hover { background: #ffffff06; border-color: #ff742f88; }
 .lab-choice[aria-pressed="true"] { background: #ff742f12; border-color: var(--orange); }

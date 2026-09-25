@@ -1,12 +1,73 @@
-// Sample topics: replace copy, objectives, and optional image/repository URLs with real projects.
+// Portfolio lab topics and concise learning workflows.
 const labProjects = [
-  {title:'Linux fundamentals',category:'SYSTEMS LAB',glyph:'>_',accent:'#ddb681',code:'$ whoami\nstudent\n$ ls -la /var/log',description:'Explore permissions, processes, and the command line in a local Linux environment.',technologies:['Linux','Bash'],objectives:['Navigate the filesystem and understand file permissions.','Inspect running processes and read system logs.','Document useful commands and what they do.']},
-  {title:'Network discovery',category:'NETWORKING LAB',glyph:'⌘',accent:'#ee936b',code:'HOST → PORT → SERVICE\n192.168.1.0/24\nScope: local lab',description:'Map devices and services inside an isolated practice network.',technologies:['Nmap','Networking'],objectives:['Define the authorized lab scope.','Identify hosts and exposed services.','Document the network topology and findings.']},
-  {title:'Web security',category:'APPLICATION SECURITY',glyph:'{ }',accent:'#d0ac90',code:'REQUEST → RESPONSE\nGET /lab HTTP/1.1\nInspect. Understand.',description:'Understand requests, responses, and common security weaknesses in a purpose-built practice app.',technologies:['Burp Suite','HTTP','OWASP'],objectives:['Observe HTTP traffic in a local test application.','Study input validation and session handling.','Record findings alongside possible fixes.']},
-  {title:'Packet analysis',category:'FEATURED NETWORKING LAB',glyph:'⌁',accent:'#ed8955',code:'01  DNS   query\n02  TCP   handshake\n03  TLS   application',description:'Follow the story inside network traffic, from a DNS lookup to an encrypted connection.',technologies:['Wireshark','TCP/IP','DNS'],objectives:['Capture traffic from your own lab environment.','Filter DNS queries and follow TCP connections.','Explain the sequence of events in a short packet analysis.']},
-  {title:'Cloud foundations',category:'CLOUD LAB',glyph:'☁',accent:'#d8c6a2',code:'IDENTITY → ACCESS\nleast privilege\nlogs: enabled',description:'Explore access controls and the building blocks of a secure cloud environment.',technologies:['Cloud','IAM'],objectives:['Understand users, roles, and access policies.','Compare broad permissions with least privilege.','Identify useful security logging settings.']},
-  {title:'Secure web development',category:'DEVELOPMENT PROJECT',glyph:'</>',accent:'#c49778',code:'design → build → test\nvalidate(input)\nescape(output)',description:'Connect accessible interface design with secure development habits.',technologies:['HTML','CSS','JavaScript'],objectives:['Build a responsive and accessible interface.','Practice safe handling of user input.','Review dependencies and document design decisions.']},
-  {title:'Log investigation',category:'DEFENSIVE SECURITY',glyph:'[!]',accent:'#dfaa62',code:'09:41  auth event\n09:42  review source\n09:43  correlate',description:'Practice finding patterns and assembling a timeline from sample system logs.',technologies:['Linux','Logs','Analysis'],objectives:['Collect sample logs in a controlled environment.','Filter events and correlate timestamps.','Write a concise investigation timeline.']}
+  {
+    "title": "The Phishing Investigation Lab",
+    "category": "EMAIL SECURITY",
+    "glyph": "@",
+    "code": "EMAIL → HEADERS → INDICATORS\nAssess the evidence\nDocument the verdict",
+    "description": "Investigate a suspicious email to identify phishing indicators and explain the risk.",
+    "technologies": [
+      "Email headers",
+      "URLs",
+      "Indicators"
+    ],
+    "objectives": [
+      "Review sample email headers, sender details, and message content.",
+      "Examine links and attachment metadata without opening suspicious content.",
+      "Record indicators and summarize the findings."
+    ]
+  },
+  {
+    "title": "The Malicious Packet Capture (PCAP) Analysis",
+    "category": "NETWORK TRAFFIC ANALYSIS",
+    "glyph": "⌁",
+    "code": "PCAP → FILTER → FOLLOW STREAM\nIdentify suspicious connections\nBuild a traffic timeline",
+    "description": "Analyze a sample packet capture to find suspicious connections and reconstruct network activity.",
+    "technologies": [
+      "Wireshark",
+      "PCAP",
+      "DNS"
+    ],
+    "objectives": [
+      "Open a sample PCAP in Wireshark and filter relevant protocols.",
+      "Review DNS requests, endpoints, and conversations for unusual patterns.",
+      "Document the evidence and a short activity timeline."
+    ]
+  },
+  {
+    "title": "The Nmap Scan & Firewall Log Analysis",
+    "category": "NETWORK DEFENSE",
+    "glyph": "⌘",
+    "code": "SCAN → FIREWALL → LOGS\nMatch source, port, and time\nExplain allowed / blocked traffic",
+    "description": "Compare an authorized Nmap scan with firewall logs to understand how scanning activity appears to defenders.",
+    "technologies": [
+      "Nmap",
+      "Firewall",
+      "Log analysis"
+    ],
+    "objectives": [
+      "Scan a local lab host within the defined scope.",
+      "Compare scan times, source addresses, and destination ports with firewall events.",
+      "Explain which connections were allowed or blocked."
+    ]
+  },
+  {
+    "title": "The Local SIEM & Windows Event Monitoring Lab",
+    "category": "SECURITY MONITORING",
+    "glyph": "[!]",
+    "code": "WINDOWS EVENTS → LOCAL SIEM\nSearch and correlate events\nReview the alert",
+    "description": "Monitor Windows events in a local SIEM and practice investigating security-relevant activity.",
+    "technologies": [
+      "SIEM",
+      "Windows Event Logs",
+      "Event Viewer"
+    ],
+    "objectives": [
+      "Collect Windows events from a lab machine into a local SIEM.",
+      "Generate test activity such as failed logins, then search and correlate the events.",
+      "Review alerts and document an investigation summary."
+    ]
+  }
 ];
 const labMenu = document.querySelector('.lab-menu');
 const labButtons = labProjects.map((project, index) => {

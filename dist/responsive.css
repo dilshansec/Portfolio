@@ -254,9 +254,9 @@
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: baseline !important;
-    flex-wrap: wrap !important;
-    gap: 0 16px !important;
-    font-size: clamp(2.8rem, 12.5vw, 4.8rem) !important;
+    flex-wrap: nowrap !important;
+    gap: 0 .15em !important;
+    font-size: clamp(1.5rem, 10.5vw, 4.8rem) !important;
     line-height: 0.95 !important;
     letter-spacing: -0.055em !important;
     margin: 0 !important;
@@ -347,16 +347,6 @@
     font-size: clamp(0.95rem, 4vw, 1.15rem) !important;
   }
 
-  /* Stack name vertically on narrow screens */
-  .identity #hero-name {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 2px !important;
-    font-size: clamp(2.8rem, 13vw, 4rem) !important;
-  }
-  .hero-last-name {
-    text-align: left !important;
-  }
   .hero-profile .profile-image {
     object-position: 65% 10% !important;
   }
@@ -381,9 +371,6 @@
   .identity-label {
     font-size: 8.5px !important;
     letter-spacing: 0.16em !important;
-  }
-  .identity #hero-name {
-    font-size: clamp(2.2rem, 12vw, 3rem) !important;
   }
   .journey-card,.journey-experience,.journey-education{grid-template-columns:1fr}
   .journey-card .journey-copy{grid-column:1;grid-row:2}

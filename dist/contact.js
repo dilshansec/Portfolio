@@ -1,5 +1,5 @@
-// Set these values when the owner supplies real public contact details.
-const portfolioContact = {email:'', github:'', linkedin:'', location:''};
+// Public contact details supplied by the portfolio owner.
+const portfolioContact = {email:'mc.thilanga@gmail.com', github:'https://github.com/dilshansec', linkedin:'https://www.linkedin.com/in/dilshansec/'};
 const contactForm = document.querySelector('#contact-form');
 const contactStatus = document.querySelector('#contact-form-status');
 const submitContact = contactForm.querySelector('button[type="submit"]');
@@ -14,7 +14,6 @@ for(const service of ['github','linkedin']) {
     link.innerHTML = card.innerHTML; link.querySelector('small').textContent = 'Visit profile ↗'; card.replaceWith(link);
   }
 }
-if(portfolioContact.location) document.querySelector('#contact-location').textContent = portfolioContact.location;
 contactForm.addEventListener('submit', async event => {
   event.preventDefault();
   const data = new FormData(contactForm);

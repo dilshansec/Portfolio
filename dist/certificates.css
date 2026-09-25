@@ -31,6 +31,9 @@
 .certificate-featured .certificate-status { background: #fff8f1; color: #26170f; }
 .certificates-note { margin: 28px 0 0; text-align: center; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .footer-nav-links { flex-wrap: wrap; }
+.social-list > a { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 17px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.social-list > a:hover { color: var(--orange); }
+.contact-float small { overflow-wrap: anywhere; }
 /* Match the other sections' viewport-height desktop composition. */
 @media (min-width: 801px) {
   .certificates { padding-block: clamp(16px, 3svh, 36px); }

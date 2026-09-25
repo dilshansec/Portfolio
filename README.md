@@ -9,7 +9,6 @@ A charcoal-and-orange portfolio bringing security, systems, and thoughtful web d
 ![HTML5](https://img.shields.io/badge/HTML5-191919?style=flat-square&logo=html5&logoColor=ff742f)
 ![CSS3](https://img.shields.io/badge/CSS3-191919?style=flat-square&logo=css&logoColor=ff742f)
 ![JavaScript](https://img.shields.io/badge/JavaScript-191919?style=flat-square&logo=javascript&logoColor=ff742f)
-![Node.js](https://img.shields.io/badge/Local_preview-Node.js-191919?style=flat-square&logo=nodedotjs&logoColor=ff742f)
 
 [Explore the code](dist) · [Run locally](#run-locally) · [Make it yours](#make-it-yours) · [GitHub profile](https://github.com/dilshansec)
 

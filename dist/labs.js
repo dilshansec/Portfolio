@@ -8,56 +8,41 @@ const labProjects = [
   {title:'Secure web development',category:'DEVELOPMENT PROJECT',glyph:'</>',accent:'#c49778',code:'design → build → test\nvalidate(input)\nescape(output)',description:'Connect accessible interface design with secure development habits.',technologies:['HTML','CSS','JavaScript'],objectives:['Build a responsive and accessible interface.','Practice safe handling of user input.','Review dependencies and document design decisions.']},
   {title:'Log investigation',category:'DEFENSIVE SECURITY',glyph:'[!]',accent:'#dfaa62',code:'09:41  auth event\n09:42  review source\n09:43  correlate',description:'Practice finding patterns and assembling a timeline from sample system logs.',technologies:['Linux','Logs','Analysis'],objectives:['Collect sample logs in a controlled environment.','Filter events and correlate timestamps.','Write a concise investigation timeline.']}
 ];
-const labSlots = [0,1,2,3,4,5,6];
-const labCards = [...document.querySelectorAll('[data-slot]')];
-function renderLabCard(card, project, featured) {
-  card.replaceChildren();
-  const inner = document.createElement('span'); inner.className = 'lab-card-inner';
-  inner.style.setProperty('--card-accent', project.accent);
-  if (project.image) { const image = document.createElement('img'); image.src = project.image; image.alt = ''; image.className = 'lab-card-image'; inner.append(image); }
-  const windowBar = document.createElement('span'); windowBar.className = 'lab-window'; windowBar.setAttribute('aria-hidden','true');
-  for(let i=0;i<3;i++) windowBar.append(document.createElement('i'));
-  const windowLabel = document.createElement('span'); windowLabel.textContent = 'sandbox / isolated'; windowBar.append(windowLabel);
-  inner.append(windowBar);
-  for (const [className, text] of [['lab-glyph',project.glyph],['lab-code',project.code],['lab-card-label',project.title],['lab-card-index','LEARNING IN PRACTICE']]) {
-    const element = document.createElement('span'); element.className = className; element.textContent = text;
-    if (className === 'lab-glyph' || className === 'lab-code') element.setAttribute('aria-hidden','true'); inner.append(element);
-  }
-  if (featured) {
-    const telemetry = document.createElement('span'); telemetry.className = 'lab-telemetry';
-    telemetry.setAttribute('aria-hidden', 'true');
-    for (const text of ['LOCAL ENV', 'SAMPLE TRACE', 'READ / ANALYZE']) {
-      const item = document.createElement('span'); item.textContent = text; telemetry.append(item);
-    }
-    inner.append(telemetry);
-  }
-  card.append(inner); card.setAttribute('aria-label', (featured ? 'Featured lab: ' : 'Feature ') + project.title);
-}
-function renderLabs() {
-  labCards.forEach((card, slot) => renderLabCard(card, labProjects[labSlots[slot]], slot === 3));
-  const selected = labProjects[labSlots[3]];
-  document.querySelector('#lab-category').textContent = selected.category.replace('FEATURED ', '');
-  document.querySelector('#lab-name').textContent = selected.title;
-  document.querySelector('#lab-description').textContent = selected.description;
-  const tags = document.querySelector('#lab-technologies'); tags.replaceChildren();
-  selected.technologies.forEach(technology => {const tag = document.createElement('li'); tag.textContent = technology; tags.append(tag);});
-}
-labCards.forEach((card, slot) => { if(slot === 3) return;
-  card.addEventListener('click', () => {
-    [labSlots[3], labSlots[slot]] = [labSlots[slot], labSlots[3]];
-    renderLabs();
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      [card,labCards[3]].forEach(element => {element.getAnimations().forEach(animation => animation.cancel()); element.animate([{opacity:.45,transform:'scale(.96)'},{opacity:1,transform:'scale(1)'}],{duration:320,easing:'ease-out'});});
-    }
-  });
+const labMenu = document.querySelector('.lab-menu');
+const labButtons = labProjects.map((project, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'lab-choice';
+  button.setAttribute('aria-controls', 'lab-panel');
+  const icon = document.createElement('span');
+  icon.className = 'lab-choice-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = project.glyph;
+  const label = document.createElement('span');
+  label.textContent = project.title;
+  const arrow = document.createElement('span');
+  arrow.className = 'lab-choice-arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+  button.append(icon, label, arrow);
+  button.addEventListener('click', () => selectLab(index));
+  labMenu.append(button);
+  return button;
 });
-const labDialog = document.querySelector('#lab-dialog');
-labDialog.querySelector('.close-dialog').addEventListener('click', () => labDialog.close());
-labDialog.addEventListener('click', event => {if(event.target !== labDialog) return; const rect = labDialog.getBoundingClientRect(); if(event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) labDialog.close();});
-// Register the new section with the existing navigation if not already present.
-if (typeof navigation !== 'undefined' && navigation && !navigation.querySelector('a[href="#labs"]')) {
-  const labsNavLink = document.createElement('a'); labsNavLink.href = '#labs'; labsNavLink.className = 'nav-link'; labsNavLink.textContent = 'Labs';
-  navigation.querySelector('a[href="#about"]')?.after(labsNavLink);
-  labsNavLink.addEventListener('click', closeMenu);
+function selectLab(index) {
+  const project = labProjects[index];
+  labButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+  document.querySelector('#lab-category').textContent = project.category.replace('FEATURED ', '');
+  document.querySelector('#lab-counter').textContent = String(index + 1).padStart(2, '0') + ' / ' + String(labProjects.length).padStart(2, '0');
+  document.querySelector('#lab-name').textContent = project.title;
+  document.querySelector('#lab-description').textContent = project.description;
+  document.querySelector('#lab-method').textContent = project.objectives.join(' ');
+  document.querySelector('#lab-flow').textContent = project.code;
+  const tags = document.querySelector('#lab-technologies');
+  tags.replaceChildren(...project.technologies.map(technology => {
+    const tag = document.createElement('li');
+    tag.textContent = technology;
+    return tag;
+  }));
 }
-renderLabs();
+selectLab(0);

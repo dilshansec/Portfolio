@@ -20,3 +20,60 @@
     object-position: 65% 0% !important;
   }
 }
+
+/* Balance the two desktop text columns around the portrait. */
+@media (min-width: 768px) {
+  .hero-top .intro,
+  .hero-top .mission {
+    width: 26%;
+    max-width: 290px;
+    display: grid;
+    grid-template-rows: 36px auto auto auto;
+    align-content: start;
+  }
+  .hero-top .intro > .eyebrow,
+  .hero-top .mission > .section-label {
+    align-self: center;
+    justify-self: start;
+  }
+  .hero-top .intro h2,
+  .hero-top .mission h2 {
+    margin: 12px 0 18px;
+    font-size: clamp(25px, 3.8svh, 42px);
+    line-height: 1.12;
+    font-weight: 450;
+  }
+  .hero-top .intro p,
+  .hero-top .mission p {
+    margin: 14px 0;
+    max-width: none;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .hero-top .mission > .primary-button { justify-self: start; }
+}
+
+@media (min-width: 768px) {
+  .hero-top .intro > .eyebrow {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: #a19f96;
+    font-size: 11px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .hero-top .intro > .eyebrow i { display: none; }
+  .hero-top .intro > .primary-button { justify-self: start; }
+}
+@media (max-width: 767px) {
+  .hero .intro-labs-link { margin-top: 20px; }
+}
+
+/* Align the left copy with the centered navbar on wide screens. */
+@media (min-width: 768px) {
+  .hero-top .intro {
+    margin-left: max(0px, calc((100% - 1180px) / 2));
+  }
+}

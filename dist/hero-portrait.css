@@ -1,0 +1,22 @@
+/* Photo-only grading: muted warmth, softer contrast, and charcoal shadows. */
+.hero-profile .profile-image {
+  filter: saturate(.68) brightness(.78) contrast(.88) sepia(.12);
+}
+
+/* Keep the portrait below the floating navigation without moving hero content. */
+.hero .hero-profile {
+  top: var(--nav-clearance, 88px);
+  height: calc(88% - var(--nav-clearance, 88px));
+}
+.hero .hero-profile .profile-image {
+  object-position: 50% 0%;
+}
+@media (max-width: 767px) {
+  .hero .hero-profile {
+    top: var(--nav-clearance, 88px) !important;
+    height: calc(100% - var(--nav-clearance, 88px)) !important;
+  }
+  .hero .hero-profile .profile-image {
+    object-position: 65% 0% !important;
+  }
+}

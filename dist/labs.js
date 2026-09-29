@@ -1,13 +1,13 @@
 // Portfolio lab topics and concise learning workflows.
 const labProjects = [
   {
-    "title": "The Phishing Investigation Lab",
+    "title": "Phishing Investigation Lab",
     "category": "EMAIL SECURITY",
     "glyph": "@",
     "code": "EMAIL → HEADERS → INDICATORS\nAssess the evidence\nDocument the verdict",
     "description": "Investigate a suspicious email to identify phishing indicators and explain the risk.",
     "technologies": [
-      "Email headers",
+      "Email Headers",
       "URLs",
       "Indicators"
     ],
@@ -18,7 +18,7 @@ const labProjects = [
     ]
   },
   {
-    "title": "The Malicious Packet Capture (PCAP) Analysis",
+    "title": "Malicious Traffic Analysis Lab (PCAP)",
     "category": "NETWORK TRAFFIC ANALYSIS",
     "glyph": "⌁",
     "code": "PCAP → FILTER → FOLLOW STREAM\nIdentify suspicious connections\nBuild a traffic timeline",
@@ -29,21 +29,21 @@ const labProjects = [
       "DNS"
     ],
     "objectives": [
-      "Open a sample PCAP in Wireshark and filter relevant protocols.",
+      "Open a sample PCAP in Wireshark and filter for relevant protocols.",
       "Review DNS requests, endpoints, and conversations for unusual patterns.",
-      "Document the evidence and a short activity timeline."
+      "Document the evidence and create a short activity timeline."
     ]
   },
   {
-    "title": "The Nmap Scan & Firewall Log Analysis",
+    "title": "Nmap Scan & Firewall Log Analysis Lab",
     "category": "NETWORK DEFENSE",
     "glyph": "⌘",
-    "code": "SCAN → FIREWALL → LOGS\nMatch source, port, and time\nExplain allowed / blocked traffic",
+    "code": "SCAN → FIREWALL → LOGS\nMatch source, port, and time\nExplain allowed and blocked traffic",
     "description": "Compare an authorized Nmap scan with firewall logs to understand how scanning activity appears to defenders.",
     "technologies": [
       "Nmap",
-      "Firewall",
-      "Log analysis"
+      "Firewalls",
+      "Log Analysis"
     ],
     "objectives": [
       "Scan a local lab host within the defined scope.",
@@ -52,18 +52,18 @@ const labProjects = [
     ]
   },
   {
-    "title": "The Local SIEM & Windows Event Monitoring Lab",
+    "title": "Local SIEM & Windows Event Monitoring Lab",
     "category": "SECURITY MONITORING",
     "glyph": "[!]",
     "code": "WINDOWS EVENTS → LOCAL SIEM\nSearch and correlate events\nReview the alert",
-    "description": "Monitor Windows events in a local SIEM and practice investigating security-relevant activity.",
+    "description": "Monitor Windows events in a local SIEM and practice investigating security-related activity.",
     "technologies": [
       "SIEM",
       "Windows Event Logs",
       "Event Viewer"
     ],
     "objectives": [
-      "Collect Windows events from a lab machine into a local SIEM.",
+      "Collect Windows events from a lab machine in a local SIEM.",
       "Generate test activity such as failed logins, then search and correlate the events.",
       "Review alerts and document an investigation summary."
     ]

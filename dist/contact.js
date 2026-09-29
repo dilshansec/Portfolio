@@ -5,7 +5,7 @@ const contactStatus = document.querySelector('#contact-form-status');
 const submitContact = contactForm.querySelector('button[type="submit"]');
 if(portfolioContact.email) {
   submitContact.textContent = 'Open email draft ↗';
-  document.querySelector('#contact-delivery-note').textContent = 'Your message opens in your email app for review before sending.';
+  document.querySelector('#contact-delivery-note').textContent = 'Review your message in your email app before sending it.';
 }
 for(const service of ['github','linkedin']) {
   const card = document.querySelector(`[data-contact-service="${service}"]`);
@@ -20,9 +20,9 @@ contactForm.addEventListener('submit', async event => {
   const message = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`;
   if(portfolioContact.email) {
     window.location.href = `mailto:${encodeURIComponent(portfolioContact.email)}?subject=${encodeURIComponent('Portfolio inquiry from ' + data.get('name'))}&body=${encodeURIComponent(message)}`;
-    contactStatus.textContent = 'Email draft requested. Review and send it in your email app.';
+    contactStatus.textContent = 'Check your email app to review and send your draft.';
     return;
   }
-  try {await navigator.clipboard.writeText(message); contactStatus.textContent = 'Message copied. Nothing was sent—contact details are not available yet.';}
-  catch {contactStatus.textContent = 'Copy is unavailable in this browser. Select and copy your message manually. Nothing was sent.';}
+  try {await navigator.clipboard.writeText(message); contactStatus.textContent = 'Message copied. Nothing was sent because contact details are not available yet.';}
+  catch {contactStatus.textContent = 'Automatic copying is unavailable in this browser. Select and copy your message manually. Nothing was sent.';}
 });

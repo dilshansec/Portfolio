@@ -77,3 +77,11 @@
     margin-left: max(0px, calc((100% - 1180px) / 2));
   }
 }
+
+/* Enlarge the desktop portrait slightly around its existing center. */
+@media (min-width: 768px) {
+  .hero .hero-profile .profile-image {
+    transform: scale(1.1);
+    transform-origin: center center;
+  }
+}
